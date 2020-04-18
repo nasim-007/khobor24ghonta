@@ -117,7 +117,7 @@ def funny_detail(request, pk):
         "comments": comments,
         "commentslatest": commentslatest,
         "comment_form": comment_form,
-        "count_hit": count_hit
+        
        
       
     }

@@ -216,12 +216,13 @@
             <div class="col-md-8 col-sm-8">
                 <!-- left content inner -->
                 <section class="recent_news_inner">
-                    <h3 class="category-headding ">সাম্প্রতিক খবর</h3>
+                    <h3 class="category-headding ">RECENT NEWS</h3>
                     <div class="headding-border"></div>
                     <div class="row">
                         <div id="content-slide" class="owl-carousel">
                             
-                             {% for internationalpost in international_post_recent_f2 %}
+                            
+                            {% for internationalpost in international_post_recent_f2 %}
                             <!-- item-1 -->
                             <div class="item home2-post">
                                 
@@ -253,7 +254,9 @@
                             </div>
                             {% endfor %}
                             
-                            {% for technologypost in technology_post_recent_s1 %}
+                            
+                            
+                             {% for technologypost in technology_post_recent_s1 %}
                             <!-- item-2 -->
                             <div class="item home2-post">
                                 
@@ -286,13 +289,46 @@
                             {% endfor %}
                             
                             
-                            
-                            
+                            {% for internationalpost in international_post_recent_f2 %}
+                            <!-- item-1 -->
+                            <div class="item home2-post">
+                                
+                                
+                                <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                    <!-- image -->
+                                    <div class="post-thumb">
+                                        <a href="{% url 'international_detail' internationalpost.pk %}">
+                                            <img class="img-responsive" src="{{ internationalpost.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-info meta-info-rn">
+                                        <div class="slide">
+                                            <a target="_blank" href="/international" class="post-badge btn_six">বি</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3><a href="{% url 'international_detail' internationalpost.pk %}">{{ internationalpost.international_title }}</a></h3>
+                                <div class="post-title-author-details">
+                                    <div class="date">
+                                        <ul>
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ internationalpost.author.first_name }}</span></a> --</li>
+                                            <li><a title="" href="#">{{ internationalpost.created_on | date }}</a> --</li>
+                                            <li><a title="" href="#"><span>{{ technologypost.comment_count }} টি মন্তব্য</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <p>{{ internationalpost.international_content | safe | slice:":400" }} <a href="{% url 'international_detail' internationalpost.pk %}">বিস্তারিত...</a></p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        
+                        
                         </div>
                     </div>
                     
+                    
+                    
+                    
                     <div class="row rn_block">
-                        
                         
                         {% for educationpost in education_post_recent %}
                         <div class="col-md-4 col-sm-4 padd">
@@ -322,7 +358,6 @@
                             </div>
                         </div>
                          {% endfor %}
-                        
                         
                         
                         {% for funnypost in funny_post_recent %}
@@ -383,7 +418,6 @@
                             </div>
                         </div>
                          {% endfor %}
-                    
                     
                     </div>
                 </section>
@@ -931,6 +965,18 @@
                     <!-- / tab_content -->
                 </div>
                 <!-- / tab -->
+                
+                
+                <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- বিজ্ঞাপন -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                    </div>
+                
+                
+                
+                
+                
                 
                 <!-- comments 
                 <div class="latest-comments-inner">
