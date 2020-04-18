@@ -1,0 +1,241 @@
+    {% extends "base.html" %}
+    
+    {% block title %}খবর২৪ঘন্টা-ভ্রমন{% endblock %}
+    
+    
+    
+    {% block page_content %}
+     
+    <section class="block-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>ভ্রমনের খবর</h1>
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><i class="pe-7s-home"></i> <a href="/" title="">প্রচ্ছদ</a></li>
+                            <li><a href="#" title="">ভ্রমন</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            
+             
+            <div class="col-sm-8">
+                <!--Post list-->
+                <div class="infinite-container">
+                {% for travelpost in page_obj %}
+                <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                    <a href="{% url 'travel_detail' travelpost.pk %}"><img src="{{ travelpost.image.url }}" alt=""></a>
+                    <div class="post-style2-detail">
+                        <h3><a href="{% url 'travel_detail' travelpost.pk %}" title="">{{ travelpost.travel_title }}</a></h3>
+                        <div class="date">
+                            <ul>
+                    
+                                <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ travelpost.author.first_name }}</span></a> --</li>
+                                <li><a title="" href="#">{{ travelpost.created_on | date }}</a> --</li>
+                                <li><a title="" href="#"><span>{{ travelpost.comment_count }} টি মন্তব্য</span></a></li>
+                            </ul>
+                        </div>
+                        <p>{{ travelpost.travel_content | safe | slice:":400" }}</p>
+                        <a href="{% url 'travel_detail' travelpost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                
+               
+                
+            </div>
+           
+            <aside class="col-sm-4 left-padding">
+                <form action="{% url 'search_travel' %}" class="search-form">
+                <div class="input-group search-area">
+                    <!-- search area -->
+                    <input type="text" class="form-control" placeholder="ভ্রমনের খবর সার্চ করুন..." name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                </form>
+                <!-- social icon -->
+                <h3 class="category-headding ">সামাজিক মাধ্যম</h3>
+                <div class="headding-border"></div>
+               <div class="top_header_icon_side">
+                            
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Twitter"><i class="fa fa-twitter-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Facebook"><i class="fa fa-facebook-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Instragram"><i class="fa fa-linkedin-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Youtube"><i class="fa fa-youtube-square fa-4x"></i></a>
+                            </span>
+                            
+                </div>
+                <!-- /.social icon -->
+                <div class="tab-inner">
+                    <ul class="tabs">
+                        <li><a href="#">জনপ্রিয় খবর</a></li>
+                        <li><a href="#">সর্বাধিক পঠিত</a></li>
+                    </ul>
+                    <hr>
+                    <!-- tabs -->
+                    <div class="tab_content">
+                        <div class="tab-item-inner">
+                            {% for travelpost in popular_travel_posts %}
+                            <div class="box-item wow fadeIn" data-wow-duration="1s">
+                                <div class="img-thumb">
+                                    <a href="{% url 'travel_detail' travelpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ travelpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-1">
+                                            <a href="/travel">ভ্রমন</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'travel_detail' travelpost.pk %}">{{ travelpost.travel_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{ travelpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ travelpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            
+                        </div>
+                        <!-- / tab item -->
+                        <div class="tab-item-inner">
+                            
+                            {% for travelpost in most_view_travel_posts %}
+                            <div class="box-item">
+                                <div class="img-thumb">
+                                    <a href="{% url 'travel_detail' travelpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ travelpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-5">
+                                            <a href="/travel">ভ্রমন</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'travel_detail' travelpost.pk %}">{{ travelpost.traveltitle }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{travelpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ travelpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            
+    
+                        </div>
+                        <!-- / tab item -->
+                    </div>
+                    <!-- / tab_content -->
+                </div>
+                <!-- / tab -->
+                <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- বিজ্ঞাপন -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                </div>
+            </aside>
+        </div>
+        
+        
+        
+        
+        
+        
+        <!-- pagination -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                     
+                   
+                    
+                   <ul class="pagination">
+                        
+                        <li>
+                            {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="prev">
+                                <i class="pe-7s-angle-left"></i>
+                            </a>
+                             {% endif %}
+                        </li>
+
+                       {% load l10n %}           
+                       {% for travelpost in page_obj.paginator.page_range %}
+                        {% if page_obj.number == travelpost  %}
+                            <li><a href="?page={{travelpost }}" class="active" >{{travelpost | localize }}</a></li>
+                        {% else %}
+                            <li><a href="?page={{travelpost }}">{{travelpost }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        
+                        
+                        <li>
+                             {% if page_obj.has_next %}
+                              <a href="?page={{ page_obj.next_page_number }}" class="next"> <i class="pe-7s-angle-right"></i></a>
+                             {% endif %}
+                        
+                        </li>
+                    </ul>
+            
+            
+           
+
+            
+            <!-- 
+            <div class="pagination" style="margin-top:30px; margin-left:20px">
+                    <span class="step-links">
+                       {% if page_obj.has_previous %}
+                           <a href="?page=1">&laquo; First</a>
+                           <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                       {% endif %}
+
+                            <span class="current">
+                                {{ page_obj.number }},{{ page_obj.paginator.num_pages }}
+                            </span>
+
+                        {% if page_obj.has_next %}
+                           <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                           <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                        {% endif %}
+                    </span>
+            </div>
+            -->
+
+  
+  
+
+
+                </div>
+                <div class="col-sm-12">
+                    <div class="banner">
+                        <img src="/static/images/top-bannner2.jpg" class="img-responsive center-block" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}

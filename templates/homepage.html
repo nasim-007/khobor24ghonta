@@ -1,0 +1,1409 @@
+    {% extends "base.html" %}
+    
+    {% block title %}খবর২৪ঘন্টা-প্রচ্ছদ{% endblock %}
+
+    
+    
+    {% block page_content %}
+    
+    <!-- header news Area
+        ============================================ -->
+    <!--- 
+    <section>
+
+       <div class="container">
+         
+           <div class="row row-margin">
+
+               <div class="col-sm-12 col-padding breakingnews">
+                       
+                       
+                       
+                      <div class="col-sm-2 col-padding newshead">
+
+                        <button class="btn btn-active">BREAKING NEWS&#160;<i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i></button>
+                      
+                      
+                      </div>
+                      
+                      
+                      
+                      
+                      <div class="col-sm-10 col-padding"> 
+                       
+                       <div class="newsticker-inner">
+                            
+                            
+                            
+                            <ul class="newsticker">
+                                <li><a href="#">this is a breaking news.....</a></li>
+                                <li><a href="#">this is a breaking news.....</a></li>
+                                <li><a href="#">this is a breaking news.....</a></li>
+                               
+                               
+                            </ul>
+                            <div class="next-prev-inner">
+                                <a href="#" id="prev-button"><i class='pe-7s-angle-left'></i></a>
+                                <a href="#" id="next-button"><i class='pe-7s-angle-right'></i></a>
+                            </div>
+                        </div>
+               
+                     </diV>
+               
+               
+               
+               
+               
+               
+               </div>
+
+           </div>
+       
+       
+       </div>
+
+    </section>
+    -->
+    
+    <section class="headding-news">
+        <div class="container">
+            <div class="row row-margin">
+                <div class="col-sm-3 col-padding">
+                    
+                    {% for sportpost in sport_post_1 %}
+                    <div class="post-wrapper post-grid-1 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="{% url 'sport_detail' sportpost.pk %}">
+                                <img class="entry-thumb" src="{{ sportpost.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                           <a href="/sport"><span class="sub-category-title color-1">খেলা </span></a>
+                            
+                            
+                            <h3 class="post-title post-title-size"><a href="{% url 'sport_detail' sportpost.pk %}" rel="bookmark"> {{ sportpost.sport_title }} </a></h3>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> {{ sportpost.created_on | date }}
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ sportpost.comment_count }} </div>
+                                <!-- read more -->
+                                <a class="readmore pull-right" href="{% url 'sport_detail' sportpost.pk %}"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     {% endfor %}
+                    
+                    {% for travelpost in travel_post_1 %}
+                    <div class="post-wrapper post-grid-1 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="{% url 'travel_detail' travelpost.pk %}">
+                                <img class="entry-thumb" src="{{ travelpost.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                           <a href="/tarvel"><span class="sub-category-title color-1">ভ্রমন </span></a>
+                            <h3 class="post-title post-title-size"><a href="{% url 'travel_detail' travelpost.pk %}" rel="bookmark"> {{ travelpost.travel_title }} </a></h3>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> {{ travelpost.created_on | date }}
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ travelpost.comment_count }} </div>
+                                <!-- read more -->
+                                <a class="readmore pull-right" href="{% url 'travel_detail' travelpost.pk %}"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     {% endfor %}
+                
+                
+                </div>
+                
+                
+                
+                <div class="col-sm-6 col-padding">
+                    
+                     {% for fashionpost in fashion_post_1 %}
+                    <div class="post-wrapper post-grid-3 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="{% url 'fashion_detail' fashionpost.pk %}">
+                                <img class="entry-thumb-middle" src="{{ fashionpost.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <a href="/fashion"><span class="sub-category-title color-1">ফ্যাশন </span></a>
+                            <h3 class="post-title"><a href="{% url 'fashion_detail' fashionpost.pk %}" rel="bookmark">{{ fashionpost.fashion_title }} </a></h3>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> {{ fashionpost.created_on | date }}
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ fashionpost.comment_count }} </div>
+                                <!-- read more -->
+                                <a class="readmore pull-right" href="{% url 'fashion_detail' fashionpost.pk %}"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     {% endfor %}
+                
+                </div>
+                
+                
+                <div class="col-sm-3 col-padding">
+                    
+                    {% for healthpost in health_post_1 %}
+                    <div class="post-wrapper post-grid-1 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="{% url 'health_detail' healthpost.pk %}">
+                                <img class="entry-thumb" src="{{ healthpost.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <a href="/health"><span  class="sub-category-title color-1">স্বাস্থ ও চিকিৎসা </span></a>
+                            <h3 class="post-title post-title-size"><a href="{% url 'health_detail' healthpost.pk %}" rel="bookmark"> {{ healthpost.health_title }} </a></h3>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> {{ healthpost.created_on | date }}
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ healthpost.comment_count }} </div>
+                                <!-- read more -->
+                                <a class="readmore pull-right" href="{% url 'health_detail' healthpost.pk %}"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     {% endfor %}
+                    
+                    {% for technologypost in technology_post_1 %}
+                    <div class="post-wrapper post-grid-1 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="{% url 'technology_detail' technologypost.pk %}">
+                                <img class="entry-thumb" src="{{ technologypost.image.url }}" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <a href="/technology"><span  class="sub-category-title color-1">বিজ্ঞান ও প্রযুক্তি </span></a>
+                            <h3 class="post-title post-title-size"><a href="{% url 'technology_detail' technologypost.pk %}" rel="bookmark"> {{ technologypost.technology_title }} </a></h3>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> {{ technologypost.created_on | date }}
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ technologypost.comment_count }} </div>
+                                <!-- read more -->
+                                <a class="readmore pull-right" href="{% url 'technology_detail' technologypost.pk %}"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     {% endfor %}
+                    
+                    
+                    
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <!-- left content inner -->
+                <section class="recent_news_inner">
+                    <h3 class="category-headding ">সাম্প্রতিক খবর</h3>
+                    <div class="headding-border"></div>
+                    <div class="row">
+                        <div id="content-slide" class="owl-carousel">
+                            
+                             {% for internationalpost in international_post_recent_f2 %}
+                            <!-- item-1 -->
+                            <div class="item home2-post">
+                                
+                                
+                                <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                    <!-- image -->
+                                    <div class="post-thumb">
+                                        <a href="{% url 'international_detail' internationalpost.pk %}">
+                                            <img class="img-responsive" src="{{ internationalpost.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-info meta-info-rn">
+                                        <div class="slide">
+                                            <a target="_blank" href="/international" class="post-badge btn_six">বি</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3><a href="{% url 'international_detail' internationalpost.pk %}">{{ internationalpost.international_title }}</a></h3>
+                                <div class="post-title-author-details">
+                                    <div class="date">
+                                        <ul>
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ internationalpost.author.first_name }}</span></a> --</li>
+                                            <li><a title="" href="#">{{ internationalpost.created_on | date }}</a> --</li>
+                                            <li><a title="" href="#"><span>{{ technologypost.comment_count }} টি মন্তব্য</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <p>{{ internationalpost.international_content | safe | slice:":400" }} <a href="{% url 'international_detail' internationalpost.pk %}">বিস্তারিত...</a></p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            {% for technologypost in technology_post_recent_s1 %}
+                            <!-- item-2 -->
+                            <div class="item home2-post">
+                                
+                                
+                                <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                    <!-- image -->
+                                    <div class="post-thumb">
+                                        <a href="{% url 'technology_detail' technologypost.pk %}">
+                                            <img class="img-responsive" src="{{ technologypost.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-info meta-info-rn">
+                                        <div class="slide">
+                                            <a target="_blank" href="/technology" class="post-badge btn_eight">বি</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3><a href="{% url 'technology_detail' technologypost.pk %}">{{ technologypost.technology_title }}</a></h3>
+                                <div class="post-title-author-details">
+                                    <div class="date">
+                                        <ul>
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ technologypost.author.first_name }}</span></a> --</li>
+                                            <li><a title="" href="#">{{ technologypost.created_on | date }}</a> --</li>
+                                            <li><a title="" href="#"><span>{{ technologypost.comment_count }} টি মন্তব্য</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <p>{{ technologypost.technology_content | safe | slice:":400" }} <a href="{% url 'technology_detail' technologypost.pk %}">বিস্তারিত...</a></p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row rn_block">
+                        
+                        
+                        {% for educationpost in education_post_recent %}
+                        <div class="col-md-4 col-sm-4 padd">
+                            <div class="home2-post">
+                                <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                    <!-- image -->
+                                    <div class="post-thumb">
+                                        <a href="{% url 'education_detail' educationpost.pk %}">
+                                            <img class="img-responsive" src="{{ educationpost.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-info meta-info-rn">
+                                        <div class="slide">
+                                            <a target="_blank" href="/education" class="post-badge btn_four">শি</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-title-author-details">
+                                    <h4><a href="{% url 'education_detail' educationpost.pk %}">{{ educationpost.education_title }}</a></h4>
+                                    <div class="date">
+                                        <ul>
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ educationpost.author.first_name }}</span></a> --</li>
+                                            <li><a title="" href="#">{{ educationpost.created_on | date }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         {% endfor %}
+                        
+                        
+                        
+                        {% for funnypost in funny_post_recent %}
+                        <div class="col-md-4 col-sm-4 padd">
+                            <div class="home2-post">
+                                <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                    <!-- image -->
+                                    <div class="post-thumb">
+                                        <a href="{% url 'funny_detail' funnypost.pk %}">
+                                            <img class="img-responsive" src="{{ funnypost.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-info meta-info-rn">
+                                        <div class="slide">
+                                            <a target="_blank" href="/funny" class="post-badge btn_five">বি</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-title-author-details">
+                                    <h4><a href="{% url 'funny_detail' funnypost.pk %}">{{ funnypost.funny_title }}</a></h4>
+                                    <div class="date">
+                                        <ul>
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ funnypost.author.first_name }}</span></a> --</li>
+                                            <li><a title="" href="#">{{ funnypost.created_on | date }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         {% endfor %}
+                        
+                        
+                        {% for healthpost in health_post_recent %}
+                        <div class="col-md-4 col-sm-4 padd">
+                            <div class="home2-post">
+                                <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                    <!-- image -->
+                                    <div class="post-thumb">
+                                        <a href="{% url 'health_detail' healthpost.pk %}">
+                                            <img class="img-responsive" src="{{ healthpost.image.url }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-info meta-info-rn">
+                                        <div class="slide">
+                                            <a target="_blank" href="/health" class="post-badge btn_nine">স্বা</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-title-author-details">
+                                    <h4><a href="{% url 'health_detail' healthpost.pk %}">{{ healthpost.health_title }}</a></h4>
+                                    <div class="date">
+                                        <ul>
+                                            <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ healthpost.author.first_name }}</span></a> --</li>
+                                            <li><a title="" href="#">{{ healthpost.created_on | date }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         {% endfor %}
+                    
+                    
+                    </div>
+                </section>
+                <!-- Politics Area
+                    ============================================ -->
+                <section class="politics_wrapper">
+                    <h3 class="category-headding ">রাজনীতির খবর</h3>
+                    <div class="headding-border"></div>
+                    <div class="row">
+                        <div id="content-slide-2" class="owl-carousel">
+                            <!-- item-1 -->
+                            <div class="item">
+                                <div class="row">
+                                    <!-- main post -->
+                                    
+                                   {% for politicspost in politics_post_1 %}
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="home2-post">
+                                            <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                                <!-- post image -->
+                                                <div class="post-thumb">
+                                                    <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                        <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <!-- post title -->
+                                                <h3><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h3>
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <div class="date">
+                                                    <ul>
+                                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                        <li><a title="" href="#">{{ politicspost.created_on | date }}</a> --</li>
+                                                        <li><a title="" href="#"><span>{{ politicspost.comment_count }} টি মন্তব্য</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <p>{{ politicspost.politics_content | safe | slice:":400" }} <a href="#">বিস্তারিত...</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    
+                                    <!-- right side post -->
+                                    
+                                   
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="row rn_block">
+                                            
+                                             {% for politicspost in politics_post_2 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    <!-- post image -->
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                        <!-- post image -->
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            
+                                             {% for politicspost in politics_post_3 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                        
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             {% endfor %}
+                                            
+                                             {% for politicspost in politics_post_4 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                       
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            
+                                             {% for politicspost in politics_post_5 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                        
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           {% endfor %}
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- item-2 -->
+                            <div class="item">
+                                <div class="row">
+                                  <!--main post --> 
+                                    
+                                    {% for politicspost in politics_post_6 %}
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="home2-post">
+                                            <div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+                                                <!-- post image -->
+                                                <div class="post-thumb">
+                                                    <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                        <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <!-- post title -->
+                                                <h3><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h3>
+                                            </div>
+                                            <div class="post-title-author-details">
+                                                <div class="date">
+                                                    <ul>
+                                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                        <li><a title="" href="#">{{ politicspost.created_on | date }}</a> --</li>
+                                                        <li><a title="" href="#"><span>{{ politicspost.comment_count }} টি মন্তব্য</span></a></li>
+                                                    </ul>
+                                                </div>
+                                                <p>{{ politicspost.politics_content | safe | slice:":400" }} <a href="#">বিস্তারিত...</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    
+                                    <!-- right side post -->
+                                    
+                                   
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="row rn_block">
+                                            
+                                             {% for politicspost in politics_post_7 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    <!-- post image -->
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                        <!-- post image -->
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            
+                                             {% for politicspost in politics_post_8 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                        
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             {% endfor %}
+                                            
+                                             {% for politicspost in politics_post_9 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                       
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                            
+                                             {% for politicspost in politics_post_10 %}
+                                            <div class="col-xs-6 col-md-6 col-sm-6 post-padding">
+                                                <div class="home2-post">
+                                                    
+                                                    <div class="post-thumb wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                                                        <a href="{% url 'politics_detail' politicspost.pk %}">
+                                                            <img src="{{ politicspost.image.url }}" class="img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="post-title-author-details">
+                                                        
+                                                        <h5><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h5>
+                                                        <div class="date">
+                                                            <ul>
+                                                                <li><a title="" href="#"><span>{{ politicspost.author.first_name }}</span></a> --</li>
+                                                                <li><a title="" href="#">{{ politicspost.created_on | date }}</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           {% endfor %}
+                                        
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                           
+                        
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </section>
+                <!-- /.Politics -->
+                <div class="ads">
+                    <a href="#"><img src="/static/images/top-bannner2.jpg" class="img-responsive center-block" alt=""></a>
+                </div>
+            </div>
+            <!-- /.left content inner -->
+            <div class="col-md-4 col-sm-4 left-padding">
+                <!-- right content wrapper -->
+                
+                <!-- /.search area -->
+                <!-- social icon -->
+                <h3 class="category-headding ">সামাজিক মাধ্যম</h3>
+                <div class="headding-border"></div>
+                
+                <div class="top_header_icon_side">
+                            
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Twitter"><i class="fa fa-twitter-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Facebook"><i class="fa fa-facebook-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Instragram"><i class="fa fa-instagram fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="linkedin"><i class="fa fa-linkedin-square fa-4x"></i></a>
+                            </span>
+                            
+                </div>
+                
+                
+                <!-- Your share button code -->
+  
+                
+                
+                
+                <!-- /.social icon -->
+                <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- Advertisement -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                </div>
+                <div class="tab-inner">
+                    <ul class="tabs">
+                        <li><a href="#">জনপ্রিয় খবর</a></li>
+                        <li><a href="#">সর্বাধিক পঠিত</a></li>
+                    </ul>
+                    <hr>
+                    <!-- tabs -->
+                    <div class="tab_content">
+                        <div class="tab-item-inner">
+                            
+                            
+                            {% for sportpost in popular_sport_posts %}
+                            <div class="box-item wow fadeIn" data-wow-duration="1s">
+                                <div class="img-thumb">
+                                    <a href="{% url 'sport_detail' sportpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ sportpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-1">
+                                            <a href="/sport">খেলা</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'sport_detail' sportpost.pk %}">{{ sportpost.sport_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{ sportpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ sportpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            {% for technologypost in popular_technology_posts %}
+                            <div class="box-item wow fadeIn" data-wow-duration="1s">
+                                <div class="img-thumb">
+                                    <a href="{% url 'technology_detail' technologypost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ technologypost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-1">
+                                            <a href="/technology">বিজ্ঞান ও প্রযুক্তি</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'technology_detail' technologypost.pk %}">{{ technologypost.technology_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{ technologypost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ technologypost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            {% for healthpost in popular_health_posts %}
+                            <div class="box-item wow fadeIn" data-wow-duration="1s">
+                                <div class="img-thumb">
+                                    <a href="{% url 'health_detail' healthpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ healthpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-1">
+                                            <a href="/health">স্বাস্থ ও চিকিৎসা</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'health_detail' healthpost.pk %}">{{ healthpost.health_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{ healthpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ healthpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            {% for fashionpost in popular_fashion_posts %}
+                            <div class="box-item wow fadeIn" data-wow-duration="1s">
+                                <div class="img-thumb">
+                                    <a href="{% url 'fashion_detail' fashionpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ fashionpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-1">
+                                            <a href="/fashion">ফ্যাশন</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'fashion_detail' fashionpost.pk %}">{{ fashionpost.fashion_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{ fashionpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ fashionpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        
+                        
+                        
+                        </div>
+                        <!-- / tab item -->
+                        <div class="tab-item-inner">
+                            
+                            
+                            
+                            {% for politicspost in most_view_politics_posts %}
+                            <div class="box-item">
+                                <div class="img-thumb">
+                                    <a href="{% url 'politics_detail' politicspost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ politicspost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-5">
+                                            <a href="/politics">রাজনীতি</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'politics_detail' politicspost.pk %}">{{ politicspost.politics_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{ politicspost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ politicspost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            
+                            
+                            {% for bangladeshpost in most_view_bangladesh_posts %}
+                            <div class="box-item">
+                                <div class="img-thumb">
+                                    <a href="{% url 'bangladesh_detail' bangladeshpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ bangladeshpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-5">
+                                            <a href="/bangladesh">বাংলাদেশ</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'bangladesh_detail' bangladeshpost.pk %}">{{ bangladeshpost.bangladesh_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{bangladeshpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ bangladeshpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            {% for sportpost in most_view_sport_posts %}
+                            <div class="box-item">
+                                <div class="img-thumb">
+                                    <a href="{% url 'sport_detail' sportpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ sportpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-5">
+                                            <a href="/sport">খেলা</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'sport_detail' sportpost.pk %}">{{ sportpost.sport_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{sportpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ sportpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                            
+                            
+                            {% for educationpost in most_view_education_posts %}
+                            <div class="box-item">
+                                <div class="img-thumb">
+                                    <a href="{% url 'education_detail' educationpost.pk %}" rel="bookmark"><img class="entry-thumb" src="{{ educationpost.image.url }}" alt="" height="80" width="90"></a>
+                                </div>
+                                <div class="item-details">
+                                    <h6 class="sub-category-title bg-color-5">
+                                            <a href="/education">শিক্ষা ও সংস্কৃতি</a>
+                                        </h6>
+                                    <h3 class="td-module-title"><a href="{% url 'education_detail' educationpost.pk %}">{{ educationpost.education_title }}</a></h3>
+                                    <div class="post-editor-date">
+                                        <!-- post date -->
+                                        <div class="post-date">
+                                            <i class="pe-7s-clock"></i> {{educationpost.created_on | date }}
+                                        </div>
+                                        <!-- post comment -->
+                                        <div class="post-author-comment"><i class="pe-7s-comment"></i> {{ educationpost.comment_count }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        
+                        
+                        
+                        
+                        </div>
+                        <!-- / tab item -->
+                    </div>
+                    <!-- / tab_content -->
+                </div>
+                <!-- / tab -->
+                
+                <!-- comments 
+                <div class="latest-comments-inner">
+                    <h3 class="category-headding ">সববিভাগের সর্বশেষ মন্তব্য</h3>
+                    <div class="headding-border"></div>
+                    
+                    {% for sportcomment in commentslatest_sport %}
+                        <!-- latest comment post 
+                        <div class="post-style2 latest-com">
+                            <img src="/static/images/comment.webp" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">{{ sportcomment.name }}</a></h5>
+                                
+                                <p>{{ sportcomment.body }}</p>
+                            </div>
+                        </div>
+                         {% endfor %}
+                    
+                    {% for technologycomment in commentslatest_technology %}
+                        <!-- latest comment post 
+                        <div class="post-style2 latest-com">
+                            <img src="/static/images/comment.webp" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">{{ technologycomment.name }}</a></h5>
+                                
+                                <p>{{ technologycomment.body }}</p>
+                            </div>
+                        </div>
+                         {% endfor %}
+
+                    {% for healthcomment in commentslatest_health %}
+                        <!-- latest comment post 
+                        <div class="post-style2 latest-com">
+                            <img src="/static/images/comment.webp" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">{{ healthcomment.name }}</a></h5>
+                                
+                                <p>{{ healthcomment.body }}</p>
+                            </div>
+                        </div>
+                         {% endfor %}
+                    
+                    
+                    
+                    {% for fashioncomment in commentslatest_fashion %}
+                        <!-- latest comment post 
+                        <div class="post-style2 latest-com">
+                            <img src="/static/images/comment.webp" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">{{ fashioncomment.name }}</a></h5>
+                                
+                                <p>{{ fashioncomment.body }}</p>
+                            </div>
+                        </div>
+                         {% endfor %}
+                
+                
+                
+                </div>
+                -->
+            
+            
+            </div>
+            <!-- side content end -->
+        </div>
+        <!-- row end -->
+    </div>
+    <!-- container end -->
+    
+    
+    
+    <!-- Video News Area
+        ============================================ -->
+    <section class="video-post-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="articale-list">
+                        <h3 class="category-headding ">ভিডিও খবর</h3>
+                        <div class="headding-border"></div>
+                        
+                         {% for videopost in videoposts %}
+                        <!--Post list-->
+                        <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                            <a href="#">{{ videopost.video_content | safe }}</a>
+                            <div class="post-style2-detail">
+                                <h3><a href="" title="">{{ videopost.video_title }}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ videopost.author.first_name }}</span></a></li>
+                                        <li><a title="" href="#">{{ bangladeshpost.created_on | date }}</a></li>
+                                        
+                                    </ul>
+                                </div>
+                                <p>{{ videopost.video_description }}</p>
+                                
+                            
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                       
+                        
+                        
+                        
+                       
+                        
+                         
+                    
+                    </div>
+                </div>
+                
+                
+                <div class="col-sm-4 left-padding">
+                    
+                    <!-- online vote
+                    <div class="online-vote">
+                        <h3 class="category-headding ">ONLINE VOTE</h3>
+                        <div class="headding-border"></div>
+                        <div class="vote-inner">
+                            <p>All the Lorem Ipsum generators the Internet tend repeat predefined chunks as necessary, making this the . </p>
+                            <div class="radio-btn">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">Yes</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">No</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">No comment</label>
+                            </div>
+                            <button type="button" class="btn btn-style">Success</button>
+                        </div>
+                    </div>
+                     -->
+                    <!-- /.online vote -->
+                    
+                    
+                    
+                    <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- বিজ্ঞাপন -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                    </div>
+                    
+                    
+                    <!-- twitter feed 
+                    <h3 class="category-headding ">TWITTER FEED</h3>
+                    <div class="headding-border"></div>
+                    <div class="feed-inner">
+                        <p>It is a long established fact that a reader will be distracted by the.</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author">@newsagency</a></cite>
+                            <span class="feed-date">2 hours ago</span>
+                        </div>
+                        <hr>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author">@newsagency</a></cite>
+                            <span class="feed-date">2 hours ago</span>
+                        </div>
+                        <hr>
+                        <p>The standard chunk of Lorem Ipsum used since the 1500s is.</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author">@newsagency</a></cite>
+                            <span class="feed-date">2 hours ago</span>
+                        </div>
+                    </div>
+                     /.twitter feed -->
+                    
+                    
+                    <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- বিজ্ঞাপন -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                    </div>
+                
+                
+                
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    
+    
+    
+    
+    <!-- Article Post
+        ============================================ -->
+    <section class="article-post-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="articale-list">
+                        <h3 class="category-headding ">সববিভাগের সর্বশেষ খবর</h3>
+                        <div class="headding-border"></div>
+                        
+                         {% for bangladeshpost in bangladesh_post_latest %}
+                        <!--Post list-->
+                        <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                            <a href="#"><img src="{{ bangladeshpost.image.url }}" alt=""></a>
+                            <div class="post-style2-detail">
+                                <h3><a href="#" title="">{{ bangladeshpost.bangladesh_title }}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ bangladeshpost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ bangladeshpost.created_on | date }}</a> --</li>
+                                        <li><a title="" href="#"><span>{{ bangladeshpost.comment_count }} টি মন্তব্য</span></a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ bangladeshpost.bangladesh_content | safe | slice:":400" }}</p>
+                                <a href="{% url 'bangladesh_detail' bangladeshpost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                            
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        
+                        {% for healthpost in health_post_latest %}
+                        <!--Post list-->
+                        <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                            <a href="#"><img src="{{ healthpost.image.url }}" alt=""></a>
+                            <div class="post-style2-detail">
+                                <h3><a href="#" title="">{{ healthpost.health_title }}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ healthpost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ healthpost.created_on | date }}</a> --</li>
+                                        <li><a title="" href="#"><span>{{ healthpost.comment_count }} টি মন্তব্য</span></a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ healthpost.health_content | safe | slice:":400" }}</p>
+                                <a href="{% url 'health_detail' healthpost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                            
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        {% for educationpost in education_post_latest %}
+                        <!--Post list-->
+                        <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                            <a href="#"><img src="{{ educationpost.image.url }}" alt=""></a>
+                            <div class="post-style2-detail">
+                                <h3><a href="#" title="">{{ educationpost.education_title }}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ educationpost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ educationpost.created_on | date }}</a> --</li>
+                                        <li><a title="" href="#"><span>{{ educationpost.comment_count }} টি মন্তব্য</span></a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ educationpost.education_content | safe | slice:":400" }}</p>
+                                <a href="{% url 'education_detail' educationpost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                            
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        {% for funnypost in funny_post_latest %}
+                        <!--Post list-->
+                        <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                            <a href="#"><img src="{{ funnypost.image.url }}" alt=""></a>
+                            <div class="post-style2-detail">
+                                <h3><a href="#" title="">{{ funnypost.funny_title }}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="#"><span>{{ funnypost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ funnypost.created_on | date }}</a> --</li>
+                                        <li><a title="" href="#"><span>{{ funnypost.comment_count }} টি মন্তব্য</span></a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ funnypost.funny_content | safe | slice:":400" }}</p>
+                                <a href="{% url 'funny_detail' funnypost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                            
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                         {% for fashionpost in fashion_post_latest %}
+                        <!-- Post list -->
+                        <div class="post-style2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <a href="{% url 'fashion_detail' fashionpost.pk %}"><img src="{{ fashionpost.image.url }}" alt=""></a>
+                            <div class="post-style2-detail">
+                                <h3><a href="#" title="">{{ fashionpost.fashion_title }}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160; <a title="" href="{% url 'fashion_detail' fashionpost.pk %}"><span>{{ fashionpost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ fashionpost.created_on | date }}</a> --</li>
+                                        <li><a title="" href="#"><span>{{ fashionpost.comment_count }} টি মন্তব্য</span></a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ fashionpost.fashion_content | safe | slice:":400" }}</p>
+                                <a href="{% url 'fashion_detail' fashionpost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    
+                    </div>
+                </div>
+                
+                
+                <div class="col-sm-4 left-padding">
+                    
+                    <!-- online vote
+                    <div class="online-vote">
+                        <h3 class="category-headding ">ONLINE VOTE</h3>
+                        <div class="headding-border"></div>
+                        <div class="vote-inner">
+                            <p>All the Lorem Ipsum generators the Internet tend repeat predefined chunks as necessary, making this the . </p>
+                            <div class="radio-btn">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">Yes</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">No</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">No comment</label>
+                            </div>
+                            <button type="button" class="btn btn-style">Success</button>
+                        </div>
+                    </div>
+                     -->
+                    <!-- /.online vote -->
+                    
+                    <!-- slider widget -->
+                    <div class="widget-slider-inner">
+                        <h3 class="category-headding ">সববিভাগের নির্বাচিত খবর</h3>
+                        <div class="headding-border"></div>
+                        <div id="widget-slider" class="owl-carousel owl-theme">
+                            
+                            <!-- widget item -->
+                            {% for internationalpost in slide_view_international_posts %}
+                            <div class="item">
+                                <a href="{% url 'international_detail' internationalpost.pk %}"><img src="{{ internationalpost.image.url }}" alt=""></a>
+                                <h4><a href="{% url 'international_detail' internationalpost.pk %}">{{ internationalpost.international_title }}</a></h4>
+                                <div class="date">
+                                    <ul>
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160;<a title="" href="#"><span>&nbsp;{{ internationalpost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ internationalpost.created_on | date }}</a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ internationalpost.international_content | safe | slice:":400" }}<a href="{% url 'international_detail' internationalpost.pk %}">বিস্তারিত...</a></p>
+                            </div>
+                             {% endfor %}
+                            
+                            
+                            <!-- widget item -->
+                            {% for travelpost in slide_view_travel_posts %}
+                            <div class="item">
+                                <a href="{% url 'travel_detail' travelpost.pk %}"><img src="{{ travelpost.image.url }}" alt=""></a>
+                                <h4><a href="{% url 'travel_detail' travelpost.pk %}">{{ travelpost.travel_title }}</a></h4>
+                                <div class="date">
+                                    <ul>
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160;<a title="" href="#"><span>&nbsp;{{ travelpost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ travelpost.created_on | date }}</a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ travelpost.travel_content | safe | slice:":400" }}<a href="{% url 'travel_detail' travelpost.pk %}">বিস্তারিত...</a></p>
+                            </div>
+                             {% endfor %}
+                            
+                            
+                            <!-- widget item -->
+                            {% for funnypost in slide_view_funny_posts %}
+                            <div class="item">
+                                <a href="{% url 'funny_detail' funnypost.pk %}"><img src="{{ funnypost.image.url }}" alt=""></a>
+                                <h4><a href="{% url 'funny_detail' funnypost.pk %}">{{ funnypost.funny_title }}</a></h4>
+                                <div class="date">
+                                    <ul>
+                                        <li><i class="fa fa-user" aria-hidden="true"></i>&#160;<a title="" href="#"><span>&nbsp;{{ funnypost.author.first_name }}</span></a> --</li>
+                                        <li><a title="" href="#">{{ funnypost.created_on | date }}</a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ funnypost.funny_content | safe | slice:":400" }}<a href="{% url 'funny_detail' funnypost.pk %}">বিস্তারিত...</a></p>
+                            </div>
+                             {% endfor %}
+                        
+                        
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- বিজ্ঞাপন -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                    </div>
+                    
+                    
+                    <!-- twitter feed 
+                    <h3 class="category-headding ">TWITTER FEED</h3>
+                    <div class="headding-border"></div>
+                    <div class="feed-inner">
+                        <p>It is a long established fact that a reader will be distracted by the.</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author">@newsagency</a></cite>
+                            <span class="feed-date">2 hours ago</span>
+                        </div>
+                        <hr>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author">@newsagency</a></cite>
+                            <span class="feed-date">2 hours ago</span>
+                        </div>
+                        <hr>
+                        <p>The standard chunk of Lorem Ipsum used since the 1500s is.</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author">@newsagency</a></cite>
+                            <span class="feed-date">2 hours ago</span>
+                        </div>
+                    </div>
+                     /.twitter feed -->
+                    
+                    
+                    <div class="banner-add">
+                    <!-- add -->
+                    <span class="add-title">- বিজ্ঞাপন -</span>
+                    <a href="#"><img src="/static/images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+                    </div>
+                
+                
+                
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- pagination
+        ============================================ -->
+    <div class="container">
+        <div class="row">
+            
+           <!--- 
+            <div class="col-sm-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" class="prev">
+                            <i class="pe-7s-angle-left"></i>
+                        </a>
+                    </li>
+                    <li> <a href="#">1</a></li>
+                    <li> <a href="#" class="active">2</a></li>
+                    <li> <a href="#">3</a></li>
+                    <li> <a href="#">4</a></li>
+                    <li> ... </li>
+                    <li> <a href="#">15</a></li>
+                    <li>
+                        <a href="#" class="next"> <i class="pe-7s-angle-right"></i></a>
+                    </li>
+                </ul>
+            </div>
+            --> 
+            
+            <div class="col-sm-12">
+                <div class="banner">
+                    <img src="/static/images/top-bannner2.jpg" class="img-responsive center-block" alt="">
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    {% endblock %}
+
+    
+    
+    

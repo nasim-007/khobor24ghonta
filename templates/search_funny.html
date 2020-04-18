@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+    
+{% block title %}খবর২৪ঘন্টা-সার্চ{% endblock %}
+
+
+{% block page_content %}
+
+<section class="block-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>বিনোদনের খবর</h1>
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><i class="pe-7s-home"></i> <a href="/" title="">প্রচ্ছদ</a></li>
+                            <li><a href="#" title="">সার্চ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            
+             
+            <div class="col-sm-8">
+                <!--Post list-->
+                <div class="infinite-container">
+                
+                {% for funnypost in queryset %}
+                <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                    <a href="#"><img src="{{ funnypost.image.url }}" alt=""></a>
+                    <div class="post-style2-detail">
+                        <h3><a href="{% url 'funny_detail' funnypost.pk %}" title="">{{ funnypost.funny_title }}</a></h3>
+                        <div class="date">
+                            <ul>
+                    
+                                <li<i class="fa fa-user" aria-hidden="true"> <a title="" href="#"><span>{{ funnypost.author.first_name }}</span></a> --</li>
+                                <li><a title="" href="#">{{ funnypost.created_on | date }}</a> --</li>
+                                <li><a title="" href="#"><span>{{ funnypost.comment_count }} টি মন্তব্য</span></a></li>
+                            </ul>
+                        </div>
+                        <p>{{ funnypost.funny_content | safe | slice:":400" }}</p>
+                        <a href="{% url 'funny_detail' funnypost.pk %}"><button type="button" class="btn btn-style">বিস্তারিত</button></a>
+                    </div>
+                </div>
+                
+                {% empty %}
+                     <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                           <div class="card-body">   
+                             <h1>দুঃখিত, কোনো ফলাফল পাওয়া যায়নি &#127773;</h1>
+                            </div>
+                     </div>
+                
+                
+                
+                {% endfor %}
+                
+                
+                
+                </div>
+                
+               
+                
+            </div>
+        
+            <aside class="col-sm-4 left-padding">
+                <form action="{% url 'search_funny' %}" class="search-form">
+                <div class="input-group search-area">
+                    <!-- search area -->
+                    <input type="text" class="form-control" placeholder="বিনোদনের খবর সার্চ করুন..." name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                </form>
+                
+                <!-- social icon -->
+                <h3 class="category-headding ">সামাজিক মাধ্যম</h3>
+                <div class="headding-border"></div>
+                <div class="top_header_icon_side">
+                            
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Twitter"><i class="fa fa-twitter-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Facebook"><i class="fa fa-facebook-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="linkedin"><i class="fa fa-linkedin-square fa-4x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Youtube"><i class="fa fa-youtube-square fa-4x"></i></a>
+                            </span>
+                            
+                </div>
+                <!-- /.social icon -->
+        
+        
+        
+        
+        </div>
+
+    </div>
+
+
+{% endblock %}

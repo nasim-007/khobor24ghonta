@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+    
+    {% block title %}খবর২৪ঘন্টা-যোগাযোগ{% endblock %}
+
+    
+    
+    {% block page_content %}
+
+               
+    
+    
+    
+    
+    
+    <section class="block-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Contact</h1>
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><i class="pe-7s-home"></i> <a href="/" title="">প্রচ্ছদ</a></li>
+                            <li><a href="#" title="">যোগাযোগ</a></li>
+                        </ul>
+                    </div>
+                
+                    <div class="breadcrumbs">
+                          {% for message in messages %}
+                           <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                       <span aria-hidden="true">&times;</span>
+                       </button>
+                          {{ message }}
+                        </div>
+                          {% endfor %}
+                    </div>
+                
+                
+                
+                
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="contact-title">
+                    <h2>সাথেই থাকুন</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="contact-address">
+                    <!-- Address -->
+                    <h3>ঠিকানা</h3>
+                    <i class="pe-7s-map-2 top-icon"></i>
+                    <ul>
+                        <li>বসুন্ধারা, আর/এ </li>
+                        <li>ঢাকা</li>
+                    </ul>
+                </div>
+                
+                
+               
+            
+            
+            
+            </div>
+            
+            
+            
+            <div class="col-sm-4">
+                <div class="contact-address">
+                    <!-- Phone -->
+                    <h3>Phone</h3>
+                    <i class="pe-7s-headphones top-icon"></i>
+                    <ul>
+                        <li><i class="fa fa-mobile"></i> +৮৮০১৬১৬৫০০৫১৫</li>
+                        <li><i class="fa fa-mobile"></i> +৮৮০১৭৭৭৪২৪১৪২</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="contact-address">
+                    <!-- Email -->
+                    <h3>ইমেইল</h3>
+                    <i class="pe-7s-global top-icon"></i>
+                    <ul>
+                        <li><i class="fa fa-envelope-o"></i> <a href="#" class="__cf_email__" data-cfemail="nasim.mahmud.1996@gmail.com">[email&#160;protected]</a></li>
+                        <li><i class="fa fa-globe"></i> www.news365bd.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="contact-form-area">
+                    
+                    
+                    
+                    
+                    {% load crispy_forms_tags %} 
+					<!-- Contact Form -->
+					<form action="." method="post" style="margin-top: 1.3em">
+                           {{ form | crispy }}
+                           {% csrf_token %}
+                         <button type="submit" class="btn btn-style">সাবমিট</button>
+                         
+                      </form>
+               
+                    
+               
+               
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}
+
+
+

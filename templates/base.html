@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--- Facebook -->
+    <meta property="og:title" content= {% if bangladeshpost %} '{{bangladeshpost.bangladesh_title}}' {% else %} "Hello World" {% endif %} />
+    
+    
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/static/images/newspaper.svg" />
+    
+   
+    
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- Scrollbar css -->
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.mCustomScrollbar.css" />
+    <!-- Owl Carousel css -->
+    <link rel="stylesheet" type="text/css" href="/static/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="/static/owl-carousel/owl.theme.css" />
+    <link rel="stylesheet" type="text/css" href="/static/owl-carousel/owl.transitions.css" />
+    <!-- youtube css -->
+    <link rel="stylesheet" type="text/css" href="/static/css/RYPP.css" />
+    <!-- jquery-ui css -->
+    <link rel="stylesheet" href="/static/css/jquery-ui.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <!-- fonts css -->
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/Pe-icon-7-stroke.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/flaticon.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    
+    <style>
+
+      .fa-arrow-right{
+          color: #1F618D;
+      }
+
+      
+    
+    
+    </style>
+    
+    
+    
+    
+    
+    <div class="se-pre-con"></div>
+      
+
+
+    
+    
+    
+    <header>
+        <!-- Mobile Menu Start -->
+        <div class="mobile-menu-area navbar-fixed-top hidden-sm hidden-md hidden-lg">
+            <nav class="mobile-menu" id="mobile-menu">
+                <div class="sidebar-nav">
+                    <ul class="nav side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>&#160;&#160;প্রচ্ছদ</a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i>&#160;&#160;লগিন&যোগাযোগ<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                    
+                                <li>
+                                    <a href="/contact"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;যোগাযোগ</a>
+                                   
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                <li><a href="/admin"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;লগিন</a></li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li><a href="/international"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;বিশ্ব</a></li>
+                        <li><a href="/bangladesh"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;বাংলাদেশ</a></li>
+                        <li><a href="/politics"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;রাজনীতি</a></li>
+                        <li><a href="/education"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;শিক্ষা ও সংস্কৃতি</a></li>
+                        <li><a href="/technology"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;বিজ্ঞান ও প্রযুক্তি</a></li>
+                        <li><a href="/travel"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;ভ্রমন</a></li>
+                        <li><a href="/fashion"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;ফ্যাশন</a></li>
+                        <li><a href="/health"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;স্বাস্থ ও চিকিৎসা</a></li>
+                        <li><a href="/funny"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;বিনোদন</a></li>
+                        <li><a href="/sport"><i class="fa fa-arrow-right" aria-hidden="true"></i>&#160;&#160;খেলা</a></li>
+                        
+                        <!-- social icon -->
+                        <li>
+                            <div class="top_header_icon_side">
+                            
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Instragram"><i class="fa fa-instagram fa-2x"></i></a>
+                                </span>
+                            <span class="top_header_icon_side_wrap">
+                                    <a target="_blank" href="#" title="Youtube"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                            </span>
+                            
+                </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container">
+                
+                <div class="top_header_icon_mobile">
+                            
+                            <h2><b style="color:white;">খবর</b><b style="color:#1F618D;">২৪</b><b style="color:white;">ঘন্টা</b></h2>
+                            
+                </div>
+                
+                <div id="showLeft" class="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu End -->
+        
+        
+        <!-- top header -->
+        <div class="top_header hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <div class="top_header_menu_wrap">
+                            <ul class="top-header-menu">
+                                <li><a href="/admin"><i class="fa fa-users" aria-hidden="true"></i>&#160; লগিন</a></li>
+                                
+                                <!-- 
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">LOGIN</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="login-inner">
+                                                <input type="text" class="form-control" id="name_email" name="name_email" placeholder="username or emaile">
+                                                <hr>
+                                                <input type="password" class="form-control" id="pass" name="pass" placeholder="*******">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="">Remember me</label>
+                                                <button type="button" class="btn btn-lr btn-active">LOGIN</button>
+                                                <button type="button" class="btn btn-lr">REGISTR</button>
+                                                <div class="foeget"><a href="#">Forget username/password?</a></div>
+                                                <div class="social_icon">
+                                                    <div class="social_icon_box social_icon_box_1">
+                                                        <div class="icon facebook-icon"></div>
+                                                        <span class="social_info">Login with facebook</span>
+                                                    </div>
+                                                </div>
+                                                <div class="social_icon">
+                                                    <div class="social_icon_box social_icon_box_2">
+                                                        <div class="icon twitter-icon"></div>
+                                                        <span class="social_info">Login with twitter</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                -->
+                                
+                                <li><a href="/contact"><i class="fa fa-address-book" aria-hidden="true"></i>&#160;যোগাযোগ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                    
+                    
+                    <div class="col-sm-6 col-md-2">
+                    
+                     <h4> </h4>
+                    
+                    </div>
+                    
+                    
+                    
+                    <!--breaking news -->
+                    <div class="col-sm-6 col-md-5">
+                        
+                        
+                        
+                        
+                        
+                        <div class="newsticker-inner">
+                           
+                        
+                            
+
+                            <ul class="newsticker ">
+                               <!-- 
+                                <div>
+                                {% for breakingnews in page_obj %}
+                                  <li><a href="#"> {{ breakingnews.newscontent }}</a></li>
+                                {% endfor %}
+                                 </div>
+                            -->
+                            </ul>
+                          
+                            
+                            <div class="next-prev-inner">
+                                <!-- 
+                               <div>
+                               {% if page_obj.has_previous %}
+                                <a href="?page={{ page_obj.previous_page_number }}" id="prev-button"><i class='pe-7s-angle-left'></i></a>
+                                {% endif %}
+                                
+                                {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}" id="next-button"><i class='pe-7s-angle-right'></i></a>
+                                {% endif %}
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-sm-12 col-md-2">
+                        <div class="top_header_icon">
+                            <span class="top_header_icon_wrap">
+                                    <a target="_blank" href="#" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+                                </span>
+                            <span class="top_header_icon_wrap">
+                                    <a target="_blank" href="#" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                                </span>
+                            <span class="top_header_icon_wrap">
+                                    <a target="_blank" href="#" title="linkedin"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                                </span>
+                            <span class="top_header_icon_wrap">
+                                    <a target="_blank" href="#" title="Youtube"><i class="fa fa-youtube-square fa-2x"></i></a>
+                                </span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="top_banner_wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 col-sm-4">
+                        <div class="header-logo">
+                            <!-- logo -->
+                            <a href="/">
+                                <h1 class="logotext" >খবর<b style="color:#1F618D;">২৪</b>ঘন্টা</h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-8 col-md-8 col-sm-8 hidden-xs">
+                        <div class="header-banner">
+                            <a href="#"><img class="td-retina img-responsive" src="/static/images/top-bannner.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- navber -->
+        <div class="container hidden-xs">
+            <nav class="navbar">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/" class="category01"><i class="fa fa-home" aria-hidden="true"></i>&#160;প্রচ্ছদ</a></li>
+                        <li>
+                            <a href="/international" class="category02" >বিশ্ব</a>
+                            
+                        </li>
+                        <li>
+                            
+                            <a href="/bangladesh" class="category03" >বাংলাদেশ</a>
+                            
+                        </li>
+                        <li><a href="/politics" class="category04">রাজনীতি</a></li>
+                        <li><a href="/sport" class="category05">খেলা</a></li>
+                        <li><a href="/technology" class="category06">বিজ্ঞান ও প্রযুক্তি</a></li>
+                        <li><a href="/health" class="category07">স্বাস্থ ও চিকিৎসা</a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle category09" data-toggle="dropdown">আরোও&#160;<i class="fa fa-plus" aria-hidden="true"></i> </a>
+                            <ul class="dropdown-menu menu-slide">
+                                <li><a href="/fashion">ফ্যাশন</a> </li>
+                                <li><a href="/funny">বিনোদন</a></li>
+                                <li><a href="/travel">ভ্রমন</a> </li>
+                                <li><a href="/education">শিক্ষা ও সংস্কৃতি</a></li>
+                                
+                            
+                            </ul>
+                        </li>
+                        <li><a href="/contact" class="category06"><i class="fa fa-address-book" aria-hidden="true"></i>&#160;যোগাযোগ</a></li>
+                        <li><a href="/admin" class="category09"><i class="fa fa-user" aria-hidden="true"></i>&#160;&#160;এডমিন</a></li>
+                    
+                    </ul>
+                </div>
+                <!-- navbar-collapse -->
+            </nav>
+        </div>
+    </header>
+
+    {% block page_content %}
+        
+        <!-- Content Goes here -->
+    
+    {% endblock %}  
+
+    <!-- footer Area
+        ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="footer-box footer-logo-address">
+                        <!-- address  -->
+                        
+                        <a href="/">
+                                <h1 class="logotextfooter" >খবর<b style="color:#1F618D;">২৪</b>ঘন্টা</h1>
+                            </a>
+                        
+                        <address>
+                            বসুন্ধরা-আর/এ,&#160; ঢাকা,&#160; বাংলাদেশ 
+                            <br> ফোন: ০১৭৭৭-৪২৪১৪২
+                            <br> ইমেইল: <a href="/" class="__cf_email__" data-cfemail="c9abadbda8baa289aea4a8a0a5e7aaa6a4">[ইমেইল&#160;নিরাপত্তা দেওয়া]</a>
+                        </address>
+                    </div>
+                    <!-- /.address  -->
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="footer-box">
+                                <h3 class="category-headding">ক্যাটাগরি</h3>
+                                <div class="headding-border bg-color-4"></div>
+                                <ul>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/international">বিশ্ব</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/bangladesh">বাংলাদেশ</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/politics">রাজনীতি</a></li>
+                                   
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/sport">খেলা</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/education">শিক্ষা ও সংস্কৃতি</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/funny">বিনোদন</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/travel">ভ্রমন</a></li>
+                                   
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/technology">বিজ্ঞান ও প্রযুক্তি</a></li>
+                                
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="footer-box">
+                                <h3 class="category-headding">জনপ্রিয় ক্যাটাগরি</h3>
+                                <div class="headding-border bg-color-5"></div>
+                                <ul>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i></i><a href="/politics">রাজনীতি</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i></i><a href="/technology">বিজ্ঞান ও প্রযুক্তি</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/bangladesh">বাংলাদেশ</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/education">শিক্ষা ও সংস্কৃতি</a></li>
+                                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/funny">বিনোদন</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </footer>
+    <div class="sub-footer">
+        <!-- sub footer -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p><a href="" class="color-1"><b><i class="fa fa-copyright" aria-hidden="true"></i>&#160;Nimusoft</b></a> | All right Reserved 2020</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="toTop" class="btn btn-info" style="display: none;">
+         <span class="fa fa-arrow-up top"></span>
+         
+         <br>উপর
+         
+    </div>
+    
+    
+    
+    
+    
+    <!-- /.sub footer -->
+   
+    
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script type="text/javascript" src="/static/js/metisMenu.min.js"></script>
+    <!-- Scrollbar js -->
+    <script type="text/javascript" src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- animate js -->
+    <script type="text/javascript" src="/static/js/wow.min.js"></script>
+    <!-- Newstricker js -->
+    <script type="text/javascript" src="/static/js/jquery.newsTicker.js"></script>
+    <!--  classify JavaScript -->
+    <script type="text/javascript" src="/static/js/classie.js"></script>
+    <!-- owl carousel js -->
+    <script type="text/javascript" src="/static/owl-carousel/owl.carousel.js"></script>
+    <!-- youtube js -->
+    <script type="text/javascript" src="/static/js/RYPP.js"></script>
+    <!-- jquery ui js -->
+    <script type="text/javascript" src="/static/js/jquery-ui.js"></script>
+    <!-- form -->
+    <script type="text/javascript" src="/static/js/form-classie.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="/static/js/custom.js"></script>
+     
+     
+     <!-- Infinite Schroll -->
+    
+   
+    <script type="text/javascript" src="/static/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="/static/js/infinite.min.js"></script>
+    
+    
+     
+   
+   
+
+    
+
+</body>
+
+</html>
