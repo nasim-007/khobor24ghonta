@@ -62,7 +62,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'khobor24ghonta.herokuapp.com', 'https://0b929778.ngrok.io' ]
+ALLOWED_HOSTS = ['khobor24ghonta.herokuapp.com','127.0.0.1' ]
 
 
 # Application definition
