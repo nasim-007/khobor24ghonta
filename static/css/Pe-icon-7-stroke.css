@@ -1,4 +1,11 @@
 
+@font-face {
+    font-family:'Pe-icon-7-stroke';
+    
+    src:url('../fonts/Pe-icon/Pe-icon-7-stroke.woff?d7yf1v') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 [class^="pe-7s-"], [class*=" pe-7s-"] {
     font-family: 'Pe-icon-7-stroke';
