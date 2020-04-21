@@ -40,7 +40,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 
 # Base url to serve media files
-MEDIA_URL = 'https://khobor24ghonta.herokuapp.com/media/'
+MEDIA_URL = '/media/'
 
 
 # Path where media is stored
@@ -57,7 +57,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 
-DJANGO_DEBUG = False
+DEBUG = False
 
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
