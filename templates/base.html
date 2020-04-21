@@ -54,7 +54,120 @@
           color: #1F618D;
       }
 
-      
+       body {
+            margin: 0;
+        }
+
+        .h-corona {
+            background: url('https://storage.googleapis.com/production-prothomalo/contents/uploads/media/2020/03/24/52b045e7342e4d0cca2e13d67564960c-5e79a6682d0a6.png');
+            background-color: #1F618D;
+            height: 52px;
+        }
+        
+        .marqueenews{
+            margin-top:-30px;
+        }
+        .h-corona .image {
+            width: 244px;
+            float: left
+        }
+
+        .h-corona .text {
+            width: calc(100% - 444px);
+            float: left;
+        }
+
+        .h-corona .dettol-ads {
+            width: 200px;
+            float: left;
+        }
+
+        .h-corona marquee {
+            color: #fff;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 7px;
+        }
+
+        .h-corona marquee a {
+            color: #fff;
+            margin-right: 88px;
+            font-weight: bold;
+        }
+
+        .h-corona marquee .gap {
+            margin-right: 50px;
+        }
+
+        .h-corona marquee .circle {
+            border: 5px solid;
+            margin-right: 10px;
+        }
+
+        .h-corona marquee .dot {
+            height: 18px;
+            width: 18px;
+            background-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 20px;
+            border: 3px solid #fff;
+            position: relative;
+            top: 5px;
+        }
+
+        .desktop_show {
+            display: block;
+        }
+
+        .mobile_show {
+            display: none;
+        }
+
+        #widget_104178 {
+            margin-top: -15px;
+        }
+
+        @media screen and (max-width: 800px) {
+            .h-corona {
+                height: auto;
+                display: inline-block;
+            }
+
+            .h-corona .image {
+                width: 100%;
+                text-align: center;
+            }
+
+            .h-corona .image img {
+                width: auto;
+            }
+
+            .h-corona .text {
+                width: 100%;
+                margin-top: -10px;
+                margin-bottom: 10px;
+            }
+
+            .desktop_show {
+                display: none;
+            }
+
+            .mobile_show {
+                display: block;
+            }
+
+            .h-corona .dettol-ads {
+                width: 100%;
+               
+                background-repeat: no-repeat;
+            }
+
+            .h-corona .dettol-ads .mobile_show {
+                width: 270px;
+                margin: auto;
+            }
+        }
     
     
     </style>
@@ -304,18 +417,22 @@
                         <li><a href="/sport" class="category05">খেলা</a></li>
                         <li><a href="/technology" class="category06">বিজ্ঞান ও প্রযুক্তি</a></li>
                         <li><a href="/health" class="category07">স্বাস্থ ও চিকিৎসা</a></li>
+                        <li><a href="/travel" class="category06">ভ্রমন</a></li>
+                        
                         
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle category09" data-toggle="dropdown">আরোও&#160;<i class="fa fa-plus" aria-hidden="true"></i> </a>
                             <ul class="dropdown-menu menu-slide">
                                 <li><a href="/fashion">ফ্যাশন</a> </li>
                                 <li><a href="/funny">বিনোদন</a></li>
-                                <li><a href="/travel">ভ্রমন</a> </li>
+                                
                                 <li><a href="/education">শিক্ষা ও সংস্কৃতি</a></li>
                                 
                             
                             </ul>
                         </li>
+                        
+                         
                         <li><a href="/contact" class="category06"><i class="fa fa-address-book" aria-hidden="true"></i>&#160;যোগাযোগ</a></li>
                         <li><a href="/admin" class="category09"><i class="fa fa-user" aria-hidden="true"></i>&#160;&#160;এডমিন</a></li>
                     
@@ -324,8 +441,24 @@
                 <!-- navbar-collapse -->
             </nav>
         </div>
+    
+    
+        
+    
+    
+    
+    
     </header>
 
+    
+    
+     
+
+    
+
+    
+    
+    
     {% block page_content %}
         
         <!-- Content Goes here -->

@@ -4052,6 +4052,11 @@ a.expand {
 
 @media(min-width:0px) and (max-width:767px) {
     
+    .marqueenews{
+        margin-top:10px!important;
+    }
+    
+    
     .logotextfooter{
         font-size: 35px;
     }
