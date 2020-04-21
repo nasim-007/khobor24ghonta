@@ -40,7 +40,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 
 # Base url to serve media files
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://khobor24ghonta.herokuapp.com/media/'
 
 
 # Path where media is stored
