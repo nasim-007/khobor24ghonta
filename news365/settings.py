@@ -57,9 +57,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 
-DEBUG = False
+#DEBUG = False
 
-#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 
 ALLOWED_HOSTS = ['khobor24ghonta.herokuapp.com','127.0.0.1' ]
