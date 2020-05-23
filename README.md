@@ -66,7 +66,7 @@ DATABASES = {
         
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
        
-        'NAME': 'personal_db',
+        'NAME': 'example_db',
         
         'USER': 'your user',
         
