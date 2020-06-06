@@ -4,7 +4,7 @@ bangla==0.0.2
 colorama==0.4.3
 construct==2.5.3
 dj-database-url==0.5.0
-Django==2.2
+Django==2.2.13
 django-crispy-forms==1.9.0
 django-endless-pagination==2.0
 django-heroku==0.3.1
